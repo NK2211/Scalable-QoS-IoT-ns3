@@ -1,0 +1,5 @@
+The internal packet delivery ratio under increasing traffic rates reflects the system’s reliability during high load conditions. The baseline system shows a decline in PDR as traffic increases, indicating packet loss.
+
+The proposed system maintains a higher PDR by prioritizing critical traffic and managing resources effectively. This ensures that essential data is delivered even during congestion.
+
+The findings confirm that QoS mechanisms are crucial for maintaining reliability in high traffic scenarios. The proposed approach provides a reliable solution for handling data-intensive applications.

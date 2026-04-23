@@ -1,0 +1,5 @@
+The latency analysis under increasing traffic rates highlights the system’s responsiveness under high load conditions. The baseline system shows a rapid increase in delay as traffic intensity rises, primarily due to congestion and queuing delays.
+
+The proposed system maintains lower latency levels by processing data at the edge and prioritizing critical traffic. This reduces the load on the core network and ensures faster packet delivery.
+
+The results demonstrate that edge computing and traffic prioritization are effective strategies for controlling latency. This is essential for applications requiring real-time communication.

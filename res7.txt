@@ -1,0 +1,5 @@
+The packet delivery ratio under increasing traffic intensity reflects the system’s reliability during high data transmission rates. The baseline system experiences a decline in PDR as traffic intensity increases, indicating that it cannot handle the surge in data flow. This leads to increased packet loss and reduced reliability.
+
+The proposed system maintains a relatively stable PDR across all traffic rates. This stability is achieved through prioritization mechanisms that ensure critical data is transmitted even during congestion. By managing bandwidth allocation effectively, the system prevents excessive packet drops.
+
+The results highlight the importance of QoS mechanisms in maintaining reliability under heavy traffic conditions. The proposed approach ensures that essential data is delivered successfully, even during peak load scenarios.

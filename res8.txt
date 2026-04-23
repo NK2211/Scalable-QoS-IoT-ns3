@@ -1,0 +1,5 @@
+The internal throughput comparison across configurations under increasing node density provides insight into the effectiveness of the proposed framework. The unmanaged baseline configuration shows a significant drop in throughput as node density increases, indicating poor scalability.
+
+The Scaling+QoS configuration maintains a stable throughput even at high node counts. This demonstrates the effectiveness of combining resource scaling with traffic prioritization. By adapting to changing network conditions, the system ensures efficient data transmission.
+
+This analysis confirms that both scaling and QoS mechanisms are necessary for achieving optimal performance. The combined approach provides a balanced solution for handling dense network environments.

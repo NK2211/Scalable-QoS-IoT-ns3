@@ -1,0 +1,5 @@
+The internal throughput comparison under increasing traffic rates evaluates the system’s efficiency in handling high data volumes. The baseline system reaches its capacity limit quickly, resulting in reduced throughput.
+
+The proposed system demonstrates better performance by adapting to traffic conditions and allocating resources dynamically. This allows the system to sustain higher throughput levels even under heavy load.
+
+The results emphasize the importance of scalability in network design. The ability to handle increasing traffic without performance degradation is a key requirement for modern IoT systems.

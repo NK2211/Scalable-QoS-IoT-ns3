@@ -1,0 +1,5 @@
+The throughput analysis under increasing traffic intensity evaluates the system’s ability to handle high data rates. The baseline configuration quickly reaches saturation as the transmission rate increases, resulting in limited throughput gains. This saturation is caused by network congestion and insufficient resource allocation.
+
+The proposed system shows a much better response to increasing traffic intensity. By dynamically adjusting resource allocation and balancing the load across available infrastructure, the system is able to sustain higher throughput levels. This indicates that the system can effectively utilize available bandwidth even under heavy traffic conditions.
+
+These findings confirm that elastic resource allocation plays a critical role in handling high traffic loads. The ability to scale resources in response to demand ensures consistent performance across varying traffic intensities.

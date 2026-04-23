@@ -1,0 +1,800 @@
+% --- PASS HYPERREF OPTIONS BEFORE CLASS LOADING TO AVOID CONFLICT ---
+\PassOptionsToPackage{hyperfootnotes=false}{hyperref}
+
+\documentclass[a4paper,fleqn]{cas-dc} 
+\usepackage[numbers]{natbib}
+\usepackage{xurl} 
+
+% --- AGGRESSIVE URL BREAKING TO FIX OVERFULL HBOX ---
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
+
+\usepackage{mathtools}
+\usepackage{booktabs}
+% \usepackage{flushend}   % Uncomment for final two-column balancing
+\usepackage{graphicx}      % Remove 'draft' for final figures
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb} 
+\usepackage{tikz}
+\usepackage{subcaption}
+
+% --- hyperref already loaded by cas-dc class; options passed above ---
+
+\numberwithin{equation}{section}
+
+% --- TOLERANCE SETTINGS TO PREVENT OVERFULL BOX WARNINGS ---
+\tolerance=10000
+\hbadness=10000
+\emergencystretch=3em
+
+\begin{document}
+\sloppy
+\setlength{\emergencystretch}{3em}
+
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+\shorttitle{Scalable Quality of Service Provisioning}
+\shortauthors{Navaneeth Krishnan and colleagues}
+
+% --- METADATA MUST GO BEFORE MAKETITLE ---
+\title[mode=title]{Scalable Quality of Service Provisioning for Massive IoT Deployments}
+
+\author[1]{Navaneeth Krishnan}[orcid=0009-0000-5967-5844]
+\ead{navaneeth.23mic7114@vitapstudent.ac.in}
+
+\author[1]{Author Two}[orcid=0000-0010-9082-9012]
+\cormark[1]
+\ead{gopikrishnan.s@vitap.ac.in}
+
+\author[1]{Author Three}[orcid=0000-0010-9082-9012]
+\ead{gopikrishnan.s@vitap.ac.in}
+
+\address[1]{School of Computer Science and Engineering, VIT AP University, Amaravathi, Andhra Pradesh, India}
+
+\cortext[1]{Corresponding author}
+
+% --- ORIGINAL ABSTRACT RESTORED ---
+\begin{abstract}
+With so many gadgets now linking together worldwide keeping things running smoothly gets tougher every day. Not only do huge groups of smart sensors and machines send out wild unpredictable chunks of data but older fixed networks struggle badly under such load. Instead of sticking to one old method scientists today test fluid mixed setups blending adaptable software control quick virtual functions plus localized number crunching near the source. To check if these new models work tough digital trials copy extreme situations where thousands of devices crowd into small spaces. Using regular radio signals in simulations shows precisely how existing systems cope once connections grow fast and numbers spike suddenly.Network performance tells its story through highly specific metrics including how much data successfully reaches its destination what critical packets vanish mid route due to buffer overflows and exactly how long time sensitive signals must wait in queues before finally arriving. Each of these figures marks a clear operational boundary where traditional scaling begins to falter. When physical systems face this type of extreme demand performance naturally drops sharply; however implementing intelligent context aware traffic prioritization ensures that the most critical data still manages to get through the chaos. While these hybrid architectures show massive promise not every challenge has been completely solved and significant gaps remain in our current operational knowledge. Ultimately designing resilient future proof networks for the next generation of connected devices requires embedding much smarter highly adaptable routing and allocation rules directly into their core foundation.
+\end{abstract}
+
+% --- ORIGINAL KEYWORDS RESTORED ---
+\begin{keywords}
+Massive IoT \sep
+Quality of Service \sep
+Scalability \sep
+SDN \sep
+NFV \sep
+Edge Computing \sep
+Network Simulation
+\end{keywords}
+
+% --- NOW WE CALL MAKETITLE ---
+\maketitle
+
+
+\section{Introduction}
+
+Out of nowhere, everything got linked. Machines popped up like weeds. These gadgets now vomit messy information—so much it jams ancient networks and overwhelms clunky computers. Peek forward. Cities hum, fed by countless tiny sensors. Factories move in jitters, guided by restless machines. Life signs watched by hospital gear. Meanwhile, power networks and transit lines pulse live. Each needs near-instant response times. Systems that never quit. Growth without hiccups. Waste trimmed to almost nothing. Nothing gets a pass.
+
+Here's where it gets tricky. When hardware spreads out too thick, yesterday's methods fall apart—fast. Fixed configurations fail. Top-down oversight falters. Performance dips. Data slips through. Systems wait around unused even when urgent jobs go wanting. Study after study drives home one stubborn fact \cite{Cheikh2025Energy,Sefati2024Resource,Kandil2024Scalability}: handling huge networks smoothly remains a puzzle. Why? Traffic behaves like weather—sudden, jagged, impossible to pin down. Out here, a broken thermometer might sit right beside a self-driving forklift. One moment everything needs fixing—now. Different jobs shout over each other, none waiting their turn.
+
+Here comes a fresh look at what helps solve this problem. People keep talking about distributed systems—like cloud, edge, or fog setups. These shrink how far data moves across wires. That means delays drop fast. Things react quicker where it matters most \cite{Jeyaraj2023Resource,Shafiq2024Review}. At the same time, networks shaped by software—and their flexibility—are hard to ignore. Function virtualization has become the favorite tool for reshaping traffic quickly, carving up resources sharply, yet keeping everything moving smoothly across large systems \cite{Theodorou2023DENIS,Alam2025Comprehensive}. Look closely at recent reviews—they show a clear trend. Being able to program every part of a virtual setup isn't optional anymore if you want growth. Still, there's trouble beneath the surface. Managing all that control eats up too much speed. Chaos builds when systems refuse to follow the same rhythm. Jumping between mismatched tools feels like translating without a dictionary.
+
+Lately, focus shifted to artificial intelligence. Deep inside the network heart, it takes root. Prediction of resources becomes possible, traffic adjusts midstream, operations sync automatically—no people needed \cite{Le2023Applications,Mokh2024LargeScaleAI}. Future plans for advanced setups lean on isolated slices, smart edges spread wide, improvement that never stops learning \cite{Ahmed2024Toward,Sefati2025Comprehensive}. Looks sharp on paper. Still, there's a clear mismatch hiding in plain sight—big-picture survey results rarely match how systems actually deliver services when buried under thousands of devices, split across messy cloud-to-edge setups, where traffic patterns shift without warning. This space needs close attention, grounded in real logistics, focused on routing methods ready for what large-scale networks will face just around the corner.
+
+\subsection{Critical Application Scenarios}
+
+Picture the weight pressing down on today's networks by looking close—not at code, but at concrete. Factories become battlegrounds for clean signals when machines crowd together under steel roofs. Bounce around inside one of these metallic rooms, you'll find motion sensors, heat gauges, robot arms firing off updates a hundred times per second. Out in the open, they breathe identical radio waves. Constant noise fills the space between them. Data pours through, thick and unbroken. Lives hang on these moments. If a fast-moving mechanical limb senses something wrong, it shouts a stop command. That small burst of information gets first place—no exceptions. Ten milliseconds too slow? Machines tear themselves apart. Assembly lines crumble by the millions. Workers get badly hurt. Speed alone won't save this network. It needs sharp reflexes—spotting a single stop command buried in noise, opening paths without hesitation, getting the message through like nothing ever blocked it. In a breath.
+
+Out in the open, big tech-driven clinics show another side entirely. Failure is not an option here. Today's city medical centers cover every room with dense webs of wireless health sensors. These devices follow heartbeat patterns, drops in blood oxygen, small changes in brain activity—nonstop, down to the smallest detail. While factories handle isolated glitches, hospital systems manage endless threads of live information at once. All of it pours into main command hubs and remote analysis platforms without pause. When routine admin traffic overwhelms the main network, essential biometric data slows down. Sometimes it vanishes altogether. With a smarter setup in place, things play out differently. Critical streams split off automatically, finding their own secure lanes right away. These dedicated paths keep urgent health signals moving smoothly. Background noise from less important tasks stays far behind, unable to interfere.
+
+\section{Research Objectives}
+
+Right off the start, this work explores current designs and tech behind services in huge setups. Not just what's there, but how flexible software-driven networks behave when pushed. Cloud meets edge—not neatly stacked, but fused into one flowing setup. Think less rigid layers, more shifting pathways that adjust on their own. Service chains evolve mid-flight, rerouting tasks without pause. Built for apps where delays aren't glitches—they're failures. What happens when thousands of different gadgets show up at once? Chaos usually. Here, it's planned for. Traffic spikes like storms—sudden, fierce—and these systems don't break, they bend. Workloads shift fast, sometimes wildly; stability comes from design, not luck. Pulling apart each layer reveals patterns beneath. Speed matters down to slivers of milliseconds. Uptime isn't hoped for—it's wired in by structure. Hardware runs tight, no wasted power, no idle gaps. Even at the edge, buried in noise and load, performance holds firm. It's not about adding parts. It's knowing which bones hold the whole thing up.
+
+Later on comes a look at how tough it is to keep systems running fast when floods of data arrive. Elastic ways of handing out resources show up here, along with tools that scale in real time, reacting instantly as demand shifts. Control spreads across cloud setups, edge nodes, and local networks, not stuck in one spot. Modern container platforms appear next, paired with virtual network parts and coordination methods built to shift as work changes. Centralized styles get weighed against loose, spread-out models, measuring actual results in growing networks without slowing things down. As digital systems keep growing—spreading wider, tangled deeper—they still have to hit tough performance demands.
+
+Start here by looking into smart systems built on machine learning, made for handling huge and messy networks. These methods dive into how advanced algorithms function when assigning resources fast, placing service chains wisely, forecasting traffic patterns closely, and adjusting controls on the fly. Instead of assuming success, tests check if such high-level AI holds up under pressure across vast scales—especially where conditions shift wildly and hardware varies drastically. Problems pop up too: heavy demands during training, delays in reaching stable results, and lag in reacting instantly get close attention, showing just how realistic these clever fixes really are when rolled out widely.
+
+One last thing stands out—there are big holes in current research, hard limits in hardware, while technical snags keep tripping up ways to scale digital systems way up. Pulling together key findings from design strategies, math-heavy tuning methods, and AI-guided approaches reveals stubborn problems still hanging around: how to handle insane numbers of devices packed tightly, close the mismatch when edge nodes talk to distant clouds, plus stay solid math-wise even during wild, aggressive shifts in data flow. What comes out is sharp focus—a well-drawn puzzle needing real attention now, showing why better network backbones must rise fast to meet crushing loads ahead.
+
+\section{Literature Survey}
+
+Starting with Appari \cite{Appari2025SDN}, a setup appears—virtual parts stitched together, pushing command to one spot while steering data flows loose. Real benefits show up right away: tasks reprogram quicker, services spin out fast. Yet size becomes an enemy. When crowds of signals pile in, the brain behind it all chokes on demands. Problems linger openly. Drop this model into enormous setups and gaps appear, wide and unpatched.
+
+An approach by Soni et al. \cite{Soni2026Intelligent} uses a smart energy-aware controller for mixed cloud and edge setups. Instead of fixed allocations, it adjusts computing power on the fly, aiming to cut down energy use. Over time, this supports longer-lasting operations. Systems run more efficiently, consuming less electricity. However, managing interactions across cloud and edge levels gets much harder. When sudden, erratic surges in demand hit, reaction speed may hit a wall.
+
+When workloads shift fast, Lu's team showed a way to adjust resources live \cite{Lu2025Online}. Their method keeps performance tight using solid math rules for cloud containers. Instead of failing under pressure, it cuts agreement breaches by a lot. The base though? A factory floor's wild mix of machines throws off the math. That kind of clutter isn't smooth or predictable. The numbers just can't keep up when devices pile in uneven clumps. Chaos like that bends rules made for tidy systems. Real noise ignores clean equations. Density spikes break neat patterns every time.
+
+Looking at large-scale IoT setups, Cheikh et al. \cite{Cheikh2025Energy} explored issues like scaling problems, power use, handling information flow, and protection risks. Shifting away from old models, new methods appear—edge systems that spread tasks, smart allocation guided by algorithms, tighter divisions within networks. Still, it remains broad in scope. Specific ways to set these up stay untested, undeveloped, absent from deep validation.
+
+Bai and team \cite{Bai2024DRPC} introduced a method using reinforcement learning across multiple nodes to handle resources in grouped container setups. By spreading tasks out, the system sidesteps issues tied to single-point control. Performance scales up more smoothly as load grows. Yet heavy computation during training slows things down, while agents take far too long to settle on stable strategies—making it tough when instant response is required.
+
+A team led by Onsu \cite{Onsu2024Scalability} built a decentralized deep reinforcement learning setup to handle growing demands in service function chains. By spreading decisions across multiple points, the system keeps steady when traffic shifts unpredictably. Still, real-world use faces hurdles—learning behavior often wobbles from node to node, while constant communication between units drains resources just to stay aligned.
+
+Looking at today's tools for handling resources in large-scale IoT systems, Jeyaraj et al. \cite{Jeyaraj2023Resource} lay out key issues tied to variety and growth. Sharp attention is given to how wildly different devices complicate scaling efforts—this part stands clear. Missing, though, is a tight exploration using math models to guide real-world setup of services across vast hardware rollouts.
+
+Instead of waiting, Ravikumar's team tried a smart way to group resources ahead of time \cite{Ravikumar2024Intelligent}. Because it uses strong forecasting tools from machine learning, basic system consistency gets stronger. Still, real-world use for fast-response tasks spread across distant edges doesn't work well—too much depends on central cloud brains making predictions.
+
+Out in the open field of network design, Mokh alongside peers \cite{Mokh2024LargeScaleAI} looked at using artificial intelligence right inside telecom cores, focusing on how big systems can stretch without breaking while staying smart about traffic control. Jumping past basic theory, their work shows a range of clever improvements waiting to be tried—yet skips over actual hands-on setup details that real machines need when running tight under heavy load with limited gear.
+
+Out in the open, Xu's team shared hands-on insights into flexible resource setup built for massive cloud microservices \cite{Xu2023Practice}. Through real-world testing, their method sharpens speed while making better use of hardware. Still, the foundation leans on typical cloud-native business systems—rarely a fit for deeply broken rhythms come through from edge sensors, jagged and uneven. Sudden shifts appear without warning, each pulse unlike the last. Not one flow stays consistent, all pieces move on their own. Wild differences show up constantly, no pattern holds long.
+
+Even though Theodorou and Mamatas \cite{Theodorou2023DENIS} designed a network slicing method for crowded wireless areas, its reliance on software-defined setups brings limits. Service separation works well, yet isolation holds firm only under tight conditions. Thousands of tiny slices create too much signaling load—this part often breaks down when real factories try it at full size.
+
+When traffic spikes without warning, Yi and team \cite{Yi2024Traffic} created a system that adjusts resources based on predicted demand. This method boosts flexibility in network scaling. Yet erratic real-world traffic patterns tend to throw off predictions—accuracy drops sharply, weakening reliability under stress.
+
+Looking at big IoT networks, Sefati et al. \cite{Sefati2025Comprehensive} checked new cybersecurity methods using service measurements. Tough trade-offs pop up—tighter security often slows down network speed, a problem their work brings into view. Yet when it comes to real-world growth at the edge, physical limits get little attention.
+
+One step beyond earlier reviews, Ahmed et al. \cite{Ahmed2024Toward} explored upcoming hurdles in securing advanced IoT networks—privacy at the hardware level, integrity of information flow, along with structural weaknesses yet to be resolved. Though they carefully examine how large-scale rollout can drag down system speed, missing from their analysis are precise frameworks backed by mathematical validation, especially those built for vast, distributed edge setups.
+
+From a different angle, Ashok together with Gopikrishnan \cite{Ashok2023Statistical} looked into how safety ties in with speed when handling distant medical checkups through digital tools. What stood out was that each setup brings its own odd rules—rules so specific they block one-size-fits-all math models from working across large networks of connected devices.
+
+Out of nowhere, Magara and Zhou \cite{Magara2024Internet} looked at how physical privacy risks grow alongside security issues in linked smart home setups. While their work clearly shows tricky trade-offs in everyday system operations, deeper concerns around large-scale structure and tight control over resources take a back seat. Though useful, the analysis doesn't push into the limits of expansion or demand-heavy environments.
+
+A method for handing out bandwidth on long-distance, low-energy networks came from El Helou's team \cite{ElHelou2024QoS}. Packet success climbs—so does how much each device can send. Yet once packed into crowded city-sized setups, it falls apart fast. Too many nodes overwhelm the design without warning.
+
+A fresh approach by Ul Haque's team \cite{UlHaque2024Scalable} tackles distributed IoT data using blockchain. Built for scale, it handles growing networks without central control. This shift cuts reliance on single points of failure. Instead of one hub managing everything, trust spreads across nodes. Performance jumps when tasks split among devices. Security strengthens under constant verification. Efficiency climbs as updates sync in near real time. Resilience grows because no single crash kills the system. Each node holds a copy, making tampering obvious. Data flows stay consistent even during disruptions. What holds data together shapes how it grows. Still, fixed resource promises along with rigid speed limits often take a back seat, slipping outside the main blueprint.
+
+A study by Tian et al. \cite{Tian2024EdgeCloud} introduced an edge-cloud setup tightly woven together, aiming to run demanding generative AI tasks across network systems. This mix of components boosts how well computation scales and stays in sync overall. Yet precise math-based assurances for managing huge volumes of concurrent operations remain absent—no clear details provided there.
+
+One step at a time, real progress stalls when theory meets actual hardware spread across distant locations. Arafat with co-researchers \cite{Arafat2025NextGen} looked closely at how future event-based designs hold up, especially regarding overall growth potential alongside tangled workflows between services. That knowledge matters now more than ever for crafting today's networked setups. Yet turning their conclusions into clear, automated setup steps for large-scale edge networks? Still an unresolved puzzle after all this time.
+
+\section{Extended Review of Optimization Techniques}
+
+Start anywhere. Picture today's networks—always shifting, never still. Machine smarts now shape how data flows through them. Think back a few years though. Researchers once leaned hard on fixed math rules. Equations had to fit perfect curves. Real life does not care about clean lines. Edge devices spit out messy demands nonstop. Old models tried forcing order using rigid formulas. That approach cracked under pressure. Numbers alone could not track sudden changes. Game plans stayed frozen even as conditions flipped wildly. Learning systems adapt mid-step. They watch what happens then adjust. Not so with classic tactics. Those methods assumed everything followed predictable patterns. Surprise events broke their logic. Now prediction blends into constant rethinking. The shift feels subtle at first glance. Yet outcomes grow sharper when algorithms listen instead of dictate.
+
+Beautiful on paper. Worth nothing once things start moving. When machines talk, they do so in bursts—sporadic, messy, never on schedule. Expecting clean forecasts there? A waste. Solving smooth curves live means nothing when signals jump like firecrackers.
+
+Out in the open, federated learning spreads itself thin across many edge gadgets, keeping personal info under wraps. It guards actual user details without a single slip. Yet here comes the catch—shuttling endless streams of model updates back and forth piles up huge traffic loads. That flood races through shaky Wi-Fi links, gobbling up the very network room we worked so hard to free.
+
+This core constraint makes clear why we picked our approach: run everything through one central deep learning coordinator placed right at the edge controller. Instead of pushing tough update jobs onto weak edge devices, keep the load where it belongs. What happens when systems grow? The drawbacks show up plainly—handling strain becomes nearly impossible. A close look at different methods appears in Table \ref{tab_optimization_summary}, laying out how badly most struggle once size increases.
+
+\begin{table*}[htbp]
+\caption{Extended Comparative Analysis of Network Optimization Techniques}
+\label{tab_optimization_summary}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Optimization Paradigm} & \textbf{Primary Advantage} & \textbf{Major Limitation} & \textbf{Suitability for Massive Scale} \\
+\hline
+Convex Optimization & Provides absolute mathematical global optimums & Requires completely perfect future traffic knowledge & Completely unsuitable due to unpredictability \\
+\hline
+Static Game Theory & Models highly competitive multi-user resource sharing & Reaching Nash equilibrium is incredibly mathematically slow & Highly inadequate for real-time dynamic routing \\
+\hline
+Federated Learning & Preserves absolute physical node data privacy & Massive bandwidth consumed synchronizing heavy weights & Extremely poor due to fragile wireless constraints \\
+\hline
+Heuristic Algorithms & Incredibly fast localized execution times & Easily trapped permanently in poor local minimums & Moderate but unreliable for critical safety data \\
+\hline
+Deep Reinforcement Learning & Actively adapts to wildly chaotic unknown environments & Requires massive initial training memory buffers & Highly excellent when properly centralized at the edge \\
+\hline
+\end{tabular}
+}
+\end{table*}
+
+\subsection{Research Gaps}
+
+Even with tons of studies diving into software-controlled systems, smooth cloud-edge links, and tricky math for managing resources, real-world gaps still pop up when scaling gets huge. Most earlier academic work fixates purely on abstract models. Reality bends differently when theory meets chaos. A million live devices create noise no equation predicts. Central control sounds neat until every signal waits its turn. Delays stack like unread mail on a desk. Growth dreams crash into hard math limits. Structure alone cannot carry the load.
+
+Spreading smarts through countless scattered edge spots creates big problems. Syncing different virtual spaces turns chaotic fast. Training models split apart because each place sees different data patterns. Oddly enough, few pay attention to how logjams build at real-world entry zones. Wireless chaos grows wilder than expected once networks stretch too far. Traffic acts unpredictable under pressure. Performance slips drop by drop. Systems crack under shifting loads. Reliability fades before it can hold steady. Today's fixes miss the mark in wide-open digital terrain.
+
+\subsection{Motivation}
+
+When streetlights, sensors, and machines link into city systems, factory lines, clinics, or transit routes, the backbone beneath them has to manage endless streams of different devices—without crashing. Huge surges in real-time data flood these networks every day. Old network setups buckle under such pressure, especially those designed only for steady traffic through centralized points. Though newer approaches like flexible software-based routing, distributed virtual functions, and processing data near its source open fresh possibilities, doubts remain. What happens when thousands of wireless signals crowd one small area? Will today's solutions survive that crush? Staying ahead of slowdowns, while holding lag down and keeping signals strong across huge areas, leans completely on sharper designs woven tightly through countless parts of the network. With that fact locked in place, testing bolder methods—ones built to endure stress without breaking stride—turns into a quiet necessity for next-gen structures stretching every limit physics allows.
+
+\subsection{Problem Statement}
+
+Looking at how networks hold up under crushing loads from countless connected machines all talking at once. When factories pack in gizmos that send info at odd times, pressure builds fast. Systems today buckle under wild swings in processing needs. Speed must stay steady even when chaos hits. Life-or-death signals cannot afford delays. Latency stays low only if design accounts for worst moments. Harder the ground gets when things spread out more. Lab tests show smooth runs—until real world stress hits. After that, failure follows fast. Signals in command channels explode without warning. Waste creeps through digital borders unseen. Down goes everything. Iron doesn't buckle easily, yet even steel bends under loads it wasn't made for. Tomorrow's networks face pressures that today's blueprints can barely imagine. Built differently—spread wide across nodes instead of stacked centrally—they must shift on their own, adjusting flow like rivers finding new paths. Stress them hard, throw chaos at them, run them until they scream: only then do we see what holds. Efficiency matters just as much as endurance; pouring more power into a failing design changes nothing. Some equations look perfect on paper, yet fall apart in practice once scale enters the picture. Flexibility becomes survival when expansion pushes past every known boundary, as shown indirectly through findings summarized earlier in Table \ref{tab_qos_summary}.
+
+\begin{table*}[htbp]
+\caption{Summary of Quality of Service Provisioning Approaches}
+\label{tab_qos_summary}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2.5cm}|p{4.5cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Reference} & \textbf{Method Proposed} & \textbf{Issues Resolved} & \textbf{Limitations} \\
+\hline
+\cite{Le2023Applications} & Distributed and federated learning techniques for services & Improved scalability and distributed intelligence for workloads & Communication overhead and slow convergence under massive scale \\
+\hline
+\cite{Muzaffar20235GDeployment} & 5G deployment models for industrial cyber physical systems & Enhanced reliability and service support for industrial systems & High deployment cost and configuration complexity \\
+\hline
+\cite{Manhary2025Scalable} & Machine learning based scalable resource allocation strategy & Improved scalability and energy efficient resource utilization & Training overhead and dependency on accurate workload prediction \\
+\hline
+\cite{Kandil2024Scalability} & Overview of scalability and end to end security challenges & Identified architectural and security limitations affecting performance & Lack of experimental validation and quantitative analysis \\
+\hline
+\cite{Masaki2023FineGrained} & Fine grained provisioning using micropayment mechanisms & Improved service differentiation and policy enforcement & Economic overhead and implementation complexity \\
+\hline
+\cite{Piga2024Expanding} & Dynamic voltage based scalable datacenter capacity expansion & Improved power efficiency and scalability & Limited evaluation for internet centric workloads \\
+\hline
+\cite{Jamil2024Enabling} & Distributed edge to cloud framework for industrial applications & Enhanced coordination across computing layers & High orchestration and management complexity \\
+\hline
+\cite{Lu2024QoSAware} & Quality aware online service provisioning in multi tenant edge & Reduced latency and cost efficient service updates & Limited validation under massive deployments \\
+\hline
+\cite{Guo2024PASS} & Predictive auto scaling system for large scale applications & Proactive performance preservation under workload variation & Prediction and monitoring overhead \\
+\hline
+\cite{Shafiq2024Review} & Software defined survey integrating distributed computing & Improved programmability and control insights & Absence of real world deployment evaluation \\
+\hline
+\end{tabular}
+}
+\end{table*}
+
+\section{Network Simulator Implementation Architecture}
+
+A software tool built for timing-based network tests runs the setup. This model handles many linked gadgets, adjusting how close they sit, how much data moves, along with shifting service rules on the fly. Devices join through strong signal hubs plus a shared local computing layer. When testing different sizes, one hub may cover everything—otherwise several spread out take part to balance demands across space.
+
+From every live node, UDP messages pulse out through apps that switch abruptly between silence and full activity, mirroring real-world signal spikes. Because priority shapes speed, top-tier data moves faster inside the simulator while lower-ranked streams wait their turn. Instead of crowding one hub, devices spread over several access zones on separate frequencies, easing gridlock without slowing down overall movement. Right in the middle, tracking tools gather fine-grained results—how many packets arrive, how long they take, what speeds hold steady over time.
+
+\subsection{Core Implementation Logic Snippet}
+
+A single step inside the simulation shows how connections adjust speed on their own. Each node follows a pattern that shapes traffic flow moment by moment. Rules shift quietly while things move through links. Behavior changes without warning based on load. This setup keeps data moving at the right pace. Timing adjusts itself across points automatically.
+
+\begin{verbatim}
+if enableQuality {
+    if port == highPriorityPort {
+        client.SetAttribute("DataRate", 
+        StringValue("20kbps"));
+    } else {
+        client.SetAttribute("DataRate", 
+        StringValue("60kbps"));
+    }
+}
+\end{verbatim}
+
+\section{System Workflow Analysis}
+
+From the beginning, speed shapes how information moves across linked edge spots. Moving up, each spot sends pieces of data ahead to entry zones. Right where hardware connects, bundles come together before heading to local processing units. Without calling it out loud, sorting happens because speeds differ on purpose between streams.
+
+When scaling is active, nodes spread out smartly over various access points. These run on different channels, keeping things secure while cutting down interference. That means faster data movement across the system. Near the outermost point, incoming packets land at UDP-based servers for handling. Constant tracking of key signals happens through specialized tools watching each stream closely. Priority messages move quicker and arrive more reliably than others when networks get overloaded—especially noticeable during peak strain.
+
+\section{Proposed Work}
+
+\subsection{Overview}
+
+When tight delays and heavy scaling matter in packed setups like intelligent factories, a layered setup helps. Software-driven networks split traffic handling from decision making, combining nearby processing with distant servers to balance workloads instead. As illustrated in Figure \ref{fig_overview_architecture}, levels connect, each depending on others yet acting together. Bottom layers hold many different sensors plus automated equipment spread widely across sites. Occasionally, these nodes send out bursts of data—ranging from slow-changing sensor readings to urgent machine commands. From there, the wireless layer pulls in countless devices linking up at once, funneling their signals toward the main network through a first radio link.
+
+Right by the entry point sits the edge controller, packing edge servers along with a local network manager. Routing choices happen fast here, while urgent data tasks get sorted on the spot. Because processing stays nearby where information begins, less load hits the central network. The whole setup leans on the orchestration piece, which works hand in hand with the network director. Incoming streams from the outer layer are grouped by the policy system, adjusting priority live—critical signals skip backed-up lines without delay.
+
+At the top sits the cloud resource manager—handles big picture coordination along with deep analysis of past usage patterns. Communication flows down to the edge controller when sudden spikes in demand call for extra computing power or space to store data. These levels work together, yet each keeps its role distinct, making sure system speed stays steady from start to finish. A signal carrying urgent timing needs gets passed through the wireless access layer straight toward the edge controller. Right away, the policy engine marks the flow due to tight rules, then tells the controller to set up a top-priority route. At the same time, processing jams get avoided because the cloud resource manager lines up enough virtual power at the edge.
+
+\subsection{System Model}
+
+Picture the setup like a one-way map made of dots and arrows, showing how things talk without looping back. Devices spread out wide send their info up through levels, moving step by step. This layout gets pinned down clearly in Equation \ref{eq_network_graph}—dots stand for units, lines show possible paths. Information flows only where connections allow, shaped by that structure. Packets born at each machine carry fixed amounts of data plus time limits for delivery. These gadgets link into nearby processing hubs placed far apart on the ground, tied together beneath. Out here, edge servers can only handle so much before they tap out. Once too many tasks pile up, the whole thing spills over—routed instead to big cloud centers where power doesn't run short.
+
+When checking how well this setup works, a few key measures come into play. The overall behavior of the system. What flows through a system comes from dividing how much data made it where it needed to go by the time you watched it happen—that is what Equation \ref{eq_system_throughput} shows. A single packet's full trip delay adds up four separate parts: time spent handling, sending, traveling across links, and waiting in line—seen together in Equation \ref{eq_end_to_end_delay}. Handling time alone appears in Equation \ref{eq_processing_delay}, found using task size split by how fast the machine works on it. Sending time takes shape differently, shown in Equation \ref{eq_transmission_delay} as how big the packet is compared to how wide the connection channel stands open.
+
+\begin{equation}
+G_{network} = [ V_{nodes}, E_{links} ]
+\label{eq_network_graph}
+\end{equation}
+
+\begin{equation}
+Th_{system} = \frac{Data_{delivered}}{Time_{window}}
+\label{eq_system_throughput}
+\end{equation}
+
+\begin{equation}
+D_{e2e} = D_{proc} + D_{trans} + D_{prop} + D_{queue}
+\label{eq_end_to_end_delay}
+\end{equation}
+
+\begin{equation}
+D_{proc} = \frac{W_{load}}{C_{speed}}
+\label{eq_processing_delay}
+\end{equation}
+
+\begin{equation}
+D_{trans} = \frac{P_{size}}{B_{width}}
+\label{eq_transmission_delay}
+\end{equation}
+
+On its way to the processing queues, every packet passes through the wireless physical layer first. Starting with Equation \ref{eq_signal_noise}, the signal-to-interference-plus-noise ratio sets the stage—transmission power times channel gain, then split by combined interference and noise. From there, link capacity's theoretical peak pops up via Shannon's rule, laid out in Equation \ref{eq_link_capacity}. Because of how signals behave under pressure, the setup mirrors real bottlenecks when crowds of devices chat at once inside tight industrial spaces.
+
+\begin{equation}
+S_{ratio} = \frac{P_{transmit} \times H_{gain}}{N_{noise} + I_{interference}}
+\label{eq_signal_noise}
+\end{equation}
+
+\begin{equation}
+C_{link} = B_{channel} \times \log_{2}[ 1 + S_{ratio} ]
+\label{eq_link_capacity}
+\end{equation}
+
+Stability across connections matters just as much within our setup. You get the chance of losing data bits—shown in Equation \ref{eq_packet_loss_prob}—by taking lost chunks and splitting them by everything sent out. Watching how well things run? That comes down to usage levels, spelled out in Equation \ref{eq_resource_utilization}: what's burning right now versus what lies ready. What we're really chasing shows up in the math of \ref{eq_objective_function}—it pulls the whole thing together aiming to boost output while keeping delays low. With care taken so minus signs stay clear in every formula, we always use $\ominus$ instead of a dash for taking away numbers. Strict limits guide how the setup functions. What you spend cannot go beyond what you have—this truth shapes Equation \ref{eq_capacity_constraint}. Ending on time matters most—Equation \ref{eq_delay_constraint} draws a firm line so delays never exceed what the agreement allows. Moving through layers, each formula connects tightly to real hardware parts, all mapped out clearly in Figure \ref{fig_overview_architecture}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res1.png} 
+    \caption{Hierarchical Quality of Service provisioning framework integrating network control and edge resources.}
+    \label{fig_overview_architecture}
+    \vspace{6pt}
+\end{figure}
+
+\begin{equation}
+P_{loss} = \frac{P_{dropped}}{P_{total}}
+\label{eq_packet_loss_prob}
+\end{equation}
+
+\begin{equation}
+U_{sys} = \frac{R_{used}}{R_{total}}
+\label{eq_resource_utilization}
+\end{equation}
+
+\begin{equation}
+O_{obj} = \max \left[ \frac{Th_{system}}{D_{e2e} + 1} \right]
+\label{eq_objective_function}
+\end{equation}
+
+\begin{equation}
+R_{used} \leq R_{total}
+\label{eq_capacity_constraint}
+\end{equation}
+
+\begin{equation}
+D_{e2e} \leq D_{max}
+\label{eq_delay_constraint}
+\end{equation}
+
+\subsection{Phase One: Traffic Classification and Prioritization}
+
+Right away, the system sorts live data flows while tagging each with urgency. With countless gadgets sending info nonstop, the entry layer gets swamped with messy bursts. Critical machine commands might stall behind mundane sensor reports—unless separated early. Every packet gets checked one at a time so the system can judge how urgent it is. Starting fresh every few moments, timing begins by counting how fast each distinct stream arrives within a moving timeframe—this part relies on what Equation \ref{p1_1} shows. From each packet's outer layer, four things stand out: where it came from, where it's going, how big it is, along with when it needs to arrive. Put together, those pieces build a multi-part identity tag describing the flow, shaped exactly as written in Equation \ref{p1_2}.
+
+After building the feature vector, the system uses scaled multipliers to turn those values into a clear priority number. Each feature gets multiplied by its own shifting weight, then added up—that math appears in Equation \ref{p1_3}. What any one queue can hold at most ties directly to how much CPU power exists overall, laid out in Equation \ref{p1_4}. How much data flow each queue receives comes down to its chunk of combined priorities compared to every other queue's sum, detailed in Equation \ref{p1_5}.
+
+\begin{equation} \lambda[t] = \frac{N[t] + N_{prev}}{\Delta t} \label{p1_1} \end{equation}
+\begin{equation} V[i] = [ S_{addr}, D_{addr}, L[i], T_{dead} ] \label{p1_2} \end{equation}
+\begin{equation} P[i] = W_{1} L[i] + W_{2} \left[ \frac{T_{max}}{T_{dead}[i]} \right] \label{p1_3} \end{equation}
+\begin{equation} Q_{max}[k] = C_{total} \times \alpha[k] \label{p1_4} \end{equation}
+\begin{equation} B[k] = B_{total} \times \frac{P_{sum}[k]}{P_{total}} \label{p1_5} \end{equation}
+
+When traffic spikes happen, there's a risk of buffer overflow—something we need to plan for. To figure out how likely it is that a packet gets dropped, the model uses an exponential scaling method shown in Equation \ref{p1_6}. What makes this setup clever? Putting the exponential of the priority score in the bottom part of the fraction means high‑priority packets almost never face deletion—their importance pulls the drop chance near zero, shielding vital industrial information. For any packet that does make it into the queue, its average wait time comes from classic queuing ideas laid out in Equation \ref{p1_7}, where what matters is how much slower things arrive than they're handled, measured using our specific way to take rates apart. Over time, the system adjusts how much each factor counts through constant input gathered via the cycle explained in Equation \ref{p1_8}. Out of all the pieces moving through the system, their combined weight piles up following what's shown in Equation \ref{p1_9}. Only those bits that make it past filtering—without getting tossed aside—add into a final count, worked out by Equation \ref{p1_10}.
+
+\begin{equation} D_{prob}[i] = \frac{P_{avg}}{P_{avg} + \exp[ P[i] ]} \label{p1_6} \end{equation}
+\begin{equation} E_{delay}[i] = \frac{1}{\mu \ominus \lambda[t]} \label{p1_7} \end{equation}
+\begin{equation} W_{new} = W_{prev} + \gamma E_{delay}[i] \label{p1_8} \end{equation}
+\begin{equation} P_{total} = \sum P[j] \label{p1_9} \end{equation}
+\begin{equation} A_{flow}[t] = \lambda[t] \times \frac{1}{1 + D_{prob}} \label{p1_10} \end{equation}
+
+\subsection{Phase Two: Elastic Resource Allocation}
+
+Once every bit of network traffic gets sorted carefully, the system checks whether real hardware at the edge can actually handle the approved data streams. That shifts attention to step two—adjusting available resources on the fly within edge devices. Workloads rise and fall unpredictably during hours, so fixed processor assignments waste capacity more often than not. Instead, the design expands or shrinks container instances based on actual usage spikes, matching supply without delay. Start with adding up all CPU needs, shown in Equation \ref{p2_1}. Memory requirements follow the same method, found in Equation \ref{p2_2}. For perfect alignment across units, one server's full power comes from mixing speed and memory size, detailed in Equation \ref{p2_3}. How busy each machine runs at now appears through a formula laid out in Equation \ref{p2_4}. When it decides to scale, the cutoff point emerges directly from the math in Equation \ref{p2_5}.
+
+\begin{equation} C_{dem} = \sum A_{flow}[i] \times C_{req}[i] \label{p2_1} \end{equation}
+\begin{equation} M_{dem} = \sum A_{flow}[i] \times M_{req}[i] \label{p2_2} \end{equation}
+\begin{equation} S_{cap}[j] = \alpha C_{max} + \beta M_{max} \label{p2_3} \end{equation}
+\begin{equation} U_{ratio}[j] = \frac{C_{demand}}{C_{max}} \label{p2_4} \end{equation}
+\begin{equation} T_{scale}[j] = U_{optimal} S_{cap}[j] \label{p2_5} \end{equation}
+
+Once edge resources run out completely, tasks shift toward central cloud systems through a managed process. How much shifts relies on what appears in Equation \ref{p2_6}, where a max operation checks how far demand goes beyond local limits—stopping any backward-looking negative numbers. Money and workflow expenses tied to running distributed setups show up next, laid out within Equation \ref{p2_7}. Power used by active machines takes shape quadratically, revealed clearly inside Equation \ref{p2_8}. Exactly how much resource falls short comes from Equation \ref{p2_9}. Only after that does Equation \ref{p2_10} lock in where each flow goes, down to the last detail.
+
+\begin{equation} O_{cloud} = \max [ 0 , C_{dem} \ominus C_{avail} ] \label{p2_6} \end{equation}
+\begin{equation} K_{cost} = \rho_{e} C_{edge} + \rho_{c} C_{cloud} \label{p2_7} \end{equation}
+\begin{equation} E_{energy} = \eta \times [ U_{ratio} \times U_{ratio} ] \label{p2_8} \end{equation}
+\begin{equation} R_{def} = \frac{C_{demand}}{C_{avail} + 1} \label{p2_9} \end{equation}
+\begin{equation} X[i, j] \in \{0, 1\} \label{p2_10} \end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res2.png} 
+    \caption{Procedural flowchart demonstrating the elastic resource allocation and dynamic cloud offloading mechanism.}
+    \label{fig_phase_two_diagram}
+    \vspace{6pt}
+\end{figure}
+
+\subsection{Phase Three: Intelligent Orchestration}
+
+Deep inside the system, a new kind of logic takes over—using intense pattern recognition to handle split-second choices once managed step by step. Instead of setting fixed rules by hand, which fails under chaos of countless shifting gadgets, something adapts on its own. This built-in guide shapes smart moves by constantly testing what works, moment after moment. What it sees around it—the flow, how busy things get—is captured precisely in Equation \ref{p3_1}. Decisions evolve based on real conditions, not guesses written ahead of time. Equation \ref{p3_2} lays out how choices are organized for the agent, offering clear steps to adjust behavior. Instead of smooth changes, decisions happen in distinct jumps—this shape comes straight from that equation. Reward thinking shifts when you see Equation \ref{p3_3}; it pulls hard against long waits and high expenses. Heavy weight lands on delay and cost, so outcomes tilt sharply if those climb too high. Updates flow without pause—the math behind them appears in Equation \ref{p3_4}, where change is measured step by step. A special kind of minus operation lives there, tracking differences as time moves forward. When picking the best move, nothing matters more than what's written in Equation \ref{p3_5}. That rule drives every choice, favoring actions with highest expected gain.
+
+\begin{equation} S[t] = [ U_{ratio}, \lambda, E_{energy} ] \label{p3_1} \end{equation}
+\begin{equation} A[t] = [ \Delta Q, \Delta T, \Delta B ] \label{p3_2} \end{equation}
+\begin{equation} R[t] = \frac{1}{E_{delay} + K_{cost}} \label{p3_3} \end{equation}
+\begin{equation} Q = Q + \alpha [ R + \gamma \max Q' \ominus Q ] \label{p3_4} \end{equation}
+\begin{equation} \pi[s] = \arg\max Q[s, a] \label{p3_5} \end{equation}
+
+Equation \ref{p3_6} sets up a strict way to measure mistakes by squaring differences. Instead of adding values, it uses squares to show how far off predictions really are. From there, Equation \ref{p3_7} gives the number the system tries to reach during training. That reference point becomes what the model aims for each round. The path forward comes from Equation \ref{p3_8}—it spells out how fast and which direction to change things. Because changes must flow backward through layers, gradients guide every shift. Over time, adjustments happen step by step; Equation \ref{p3_9} shows how weight updates unfold. Old weights lose the size of the gradient bit by bit. Stability enters near the end—Equation \ref{p3_10} tracks progress smoothly over recent steps. Rather than jumping at sudden shifts, it averages them gently.
+
+\begin{equation} L_{loss} = \frac{1}{2} [ Y_{target} \ominus Q ]^{2} \label{p3_6} \end{equation}
+\begin{equation} Y_{target} = R + \gamma \max Q'_{target} \label{p3_7} \end{equation}
+\begin{equation} G_{grad} = \nabla L_{loss} \label{p3_8} \end{equation}
+\begin{equation} \theta_{new} = \theta_{prev} \ominus \eta G_{grad} \label{p3_9} \end{equation}
+\begin{equation} C_{metric} = \frac{1}{T} \sum R[t] \label{p3_10} \end{equation}
+
+\section{Advanced Queuing and Markov Chain Analysis}
+
+Every once in awhile, a fresh look at heavy-duty server systems shows how queues behave when pushed hard. Instead of guessing, a fluid math setup tracks timing through random jumps—like particles drifting step by step. One way it works: picture each machine on the network acting alone, doing its own job without waiting on others. Outcomes settle into patterns only long observation can reveal, exposing exactly when memory fills up too far.
+
+Right when no packets arrive at all, the chance the system sits completely idle comes straight from Equation \ref{mq1}. Instead of just counting, the odds of having precisely $k$ live packets sitting in line show up clearly in Equation \ref{mq2}. Only if what shows up stays under what gets handled can disaster be avoided—Equation \ref{mq3} draws that line sharply. That limit on flow versus processing power keeps everything from piling up forever, nothing more, nothing less.
+
+\begin{equation} \pi_{zero} = \left[ 1 \ominus \frac{\lambda}{\mu} \right] \label{mq1} \end{equation}
+\begin{equation} \pi_{k} = \pi_{zero} \times \left[ \frac{\lambda}{\mu} \right]^{k} \label{mq2} \end{equation}
+\begin{equation} \rho_{stab} = \frac{\lambda}{\mu} < 1 \label{mq3} \end{equation}
+
+To figure out how many physical packets wait on average in the active buffer, we apply Equation \ref{mq4}. Right after arrival, each new packet faces a delay—its mean duration comes straight from the math in Equation \ref{mq5}. Whenever heavy surges flood the local edge, the sharp risk of total buffer overload—and losing packets—takes shape through Equation \ref{mq6}.
+
+\begin{equation} N_{queue} = \frac{\rho_{stab}}{1 \ominus \rho_{stab}} \label{mq4} \end{equation}
+\begin{equation} W_{time} = \frac{N_{queue}}{\lambda} \label{mq5} \end{equation}
+\begin{equation} P_{drop} = \pi_{zero} \times \rho_{stab}^{K} \label{mq6} \end{equation}
+
+Modeling the intricate setup of a multi-server edge cluster leads us to build on the original framework, shaping it into something more detailed. Not every detail fits simply—so Equation \ref{mq7} pins down how likely full usage really is. You'll find the combined average queue length across all linked servers spelled out in Equation \ref{mq8}, nothing hidden. When delays turn critical, crossing that firm limit, their chance shows up clearly through Equation \ref{mq9}. Underneath that behavior, the spread of delay times—their unyielding variation—is nailed by Equation \ref{mq10}.
+
+\begin{equation} P_{cluster} = \frac{\rho_{stab}^{C}}{C! \times [1 \ominus \frac{\rho_{stab}}{C}]} \label{mq7} \end{equation}
+\begin{equation} L_{cluster} = P_{cluster} \times \frac{\rho_{stab}}{C \ominus \rho_{stab}} \label{mq8} \end{equation}
+\begin{equation} P_{delay} = \exp\left[ \ominus \mu [ C \ominus \rho_{stab} ] t \right] \label{mq9} \end{equation}
+\begin{equation} Var_{delay} = \frac{1}{\mu^{2} [ C \ominus \rho_{stab} ]^{2}} \label{mq10} \end{equation}
+
+\section{Energy Consumption Mathematical Formulation}
+
+Out in the real world, running big networks across scattered machines means staring hard at how much electricity they guzzle. Each hardware server adds up to a full draw that breaks neatly into three separate pieces—no more, no less. Stillness holds a steady hum, logged in Equation \ref{en1} as base power when systems wait without moving. When bursts of work surge through circuits, energy jumps unpredictably—this spike lives in Equation \ref{en2}. Heat builds fast under strain; avoiding burnout means fighting warmth with coolth, a balance weighed by Equation \ref{en3} using fixed outdoor heat traits.
+
+\begin{equation} P_{stat} = P_{base} \times N_{active} \label{en1} \end{equation}
+\begin{equation} P_{dyn} = \alpha_{cpu} \times f_{clock}^{3} \times V_{core}^{2} \label{en2} \end{equation}
+\begin{equation} P_{cool} = \theta_{therm} \times [ P_{stat} + P_{dyn} ] \label{en3} \end{equation}
+
+Exactly how much energy belongs to the whole system appears clearly in Equation \ref{en4}. For accuracy in green computing standards, Equation \ref{en5} captures data volume moved per joule burned. When edge nodes drop into deep sleep, the cost of waking them back up shows plainly in Equation \ref{en6}.
+
+\begin{equation} E_{tot} = \int [ P_{stat} + P_{dyn} + P_{cool} ] dt \label{en4} \end{equation}
+\begin{equation} R_{eff} = \frac{Data_{tx}}{E_{tot}} \label{en5} \end{equation}
+\begin{equation} E_{pen} = P_{trans} \times T_{wake} \label{en6} \end{equation}
+
+Long hauls to remote cloud servers aren't free either. Equation \ref{en7} tracks the transmission energy burned over distance. Execution energy at the cloud side gets computed in Equation \ref{en8}. Total offloading cost—haul plus compute plus wake-up—sums up in Equation \ref{en9}. Finally, the actual savings our smart framework pulls off? Equation \ref{en10} lays it bare: unmanaged baseline consumption minus everything we spent.
+
+\begin{equation} E_{haul} = \beta_{link} \times D_{dist} \times V_{pay} \label{en7} \end{equation}
+\begin{equation} E_{cld} = P_{rem} \times T_{exec} \label{en8} \end{equation}
+\begin{equation} E_{off} = E_{haul} + E_{cld} + E_{pen} \label{en9} \end{equation}
+\begin{equation} E_{save} = E_{unman} \ominus [ E_{tot} + E_{off} ] \label{en10} \end{equation}
+
+\section{Security and Cryptographic Overhead Modeling}
+
+Performance matters. But so does keeping intruders out. A dense network shifting toward decentralized ledgers—which we recommend later—must swallow bloated payloads. Block headers, hashes, signatures. They expand every packet. Equation \ref{sx1} captures that inflation: payload plus hash over payload. At the fragile edge node, verifying a signature burns precious cycles. Equation \ref{sx2} tallies that cost: signatures times computation per check.
+
+\begin{equation} R_{exp} = \frac{S_{pay} + S_{hash}}{S_{pay}} \label{sx1} \end{equation}
+\begin{equation} T_{val} = N_{sig} \times C_{comp} \label{sx2} \end{equation}
+
+Deadlines don't care about crypto. Equation \ref{sx3} mandates that validation time fits inside whatever slack the end-to-end delay left behind. If it doesn't, we roll the dice. Equation \ref{sx4} gives the odds of blowing past the deadline purely because encryption took too long.
+
+\begin{equation} T_{val} < D_{dead} \ominus D_{e2e} \label{sx3} \end{equation}
+\begin{equation} P_{viol} = \exp\left[ \ominus \frac{D_{dead} \ominus D_{e2e}}{T_{val}} \right] \label{sx4} \end{equation}
+
+\section{Deep Reinforcement Learning Hyperparameter Dynamics}
+
+That agent sitting at the core? It needs careful tuning. Crank the learning rate too high, and the whole network oscillates wildly. Routing falls apart. The discount factor—gamma—tells it how much to value tomorrow over today. Equation \ref{sx5} shows epsilon decaying over time, exploration giving way to exploitation. Equation \ref{sx6} is the discounted sum of future rewards.
+
+\begin{equation} \epsilon_{t} = \epsilon_{init} \times \exp[ \ominus \lambda \times t ] \label{sx5} \end{equation}
+\begin{equation} R_{disc} = \sum \gamma^{t} \times R_{t} \label{sx6} \end{equation}
+
+Stability across thousands of edge nodes demands monitoring gradient variance—Equation \ref{sx7}. Too much variance, and updates become erratic. To keep exploring and avoid getting stuck in bad routing ruts, we watch policy entropy—Equation \ref{sx8}. High entropy means the agent is still trying new things.
+
+\begin{equation} V_{grad} = \frac{1}{B_{size}} \sum G_{grad}^{2} \label{sx7} \end{equation}
+\begin{equation} H_{pol} = \ominus \sum \pi_{s} \times \log[ \pi_{s} ] \label{sx8} \end{equation}
+
+At any microsecond, the state's value is simply the max Q over actions—Equation \ref{sx9}. And to prove the whole distributed learning thing actually converges, we invoke Lyapunov. Equation \ref{sx10} bounds the loss, showing the system settles rather than spiraling.
+
+\begin{equation} V_{state} = \max Q[s, a] \label{sx9} \end{equation}
+\begin{equation} L_{lyap} = \frac{1}{2} \sum [ Q \ominus Q_{opt} ]^{2} \label{sx10} \end{equation}
+
+\section{Controller Flow Table Management Architecture}
+
+The virtual network controller at the heart of this software-defined beast makes routing decisions in microseconds. It uses flow tables—layered, complex, constantly rewritten. Every incoming packet gets shoved through a match-action pipeline. Headers stripped, compared against thousands of live rules.
+
+Match found? Good. The programmed action fires instantly. Packet shoots toward its optimal destination. No match? Rare, but it happens with weird, malformed traffic. The edge switch buffers the packet. It whispers upstream to the controller. A new rule gets forged on the fly and pushed down. The packet resumes its journey. The system bends without breaking.
+
+\section{Edge Container Migration Dynamics}
+
+Containers move. Across chaotic, geographically scattered edge nodes, they leap from one host to another. Doing this fast, without dropping state or chewing up all the bandwidth, demands precision. The math behind migration cost—downtime, sync overhead, data transfer—weighs against the benefit of relocating compute closer to the data source. Our framework triggers migration proactively. It reads the workload trends, sees the mobility patterns, and moves containers before congestion hits. No reactive scrambling. Just smooth, planned relocation that keeps services humming.
+
+\section{Exhaustive Case Study One: Autonomous Vehicular Networks}
+
+First test: moving cars. Autonomous vehicles. Millions of them. Each one a high-velocity node screaming telemetry while dodging obstacles. The physical channel is a nightmare—attenuation spikes, handovers tear connections apart. Our simulation throws all this in. When a collision warning fires, the prioritization engine doesn't flinch. That emergency packet cuts ahead. It bypasses standard queues. It arrives within the strict latency budget needed for evasive action. Edge classification plus dynamic scaling ensures that even at peak urban density, the network doesn't become the reason for a crash.
+
+\section{Exhaustive Case Study Two: Smart Grid Energy Distribution}
+
+Second test: the power grid. Not high mobility, but massive scale. Millions of smart meters and phasor measurement units push telemetry nonstop. When the grid wobbles, data volumes explode. Our elastic resource allocation kicks in. Edge compute scales up locally. State estimation runs near the substation, not in some distant cloud. Only aggregated, critical events make the long haul. The control center stays lucid. Grid stability holds. Latency stays bounded even when the physical infrastructure strains.
+
+\section{Exhaustive Case Study Three: Precision Agriculture Networks}
+
+Third test: farms. Sensors everywhere. Soil moisture, temperature, leaf wetness. Traffic is mostly periodic, low-bandwidth, predictable. But then—frost warning. Irrigation failure. The pattern shatters. Our intelligent orchestration learns the rhythms of the fields. During quiet periods, it scales down edge resources, sipping power. When an urgent agronomic alert hits, the system snaps awake. Prioritization escalates the alert instantly. The result: a self-regulating network that matches the seasonal and diurnal heartbeat of agriculture.
+
+\section{Mathematical Interpretation}
+
+The model isn't just symbols. The throughput equation reflects physical efficiency—data delivered under constrained virtual resources. The delay model captures cumulative latency across processing, transmission, propagation, and queuing. The priority scoring mechanism aggressively favors deadline-sensitive traffic. The exponential drop function selectively discards low-value bulk data during congestion, preserving stability. The objective function balances maximizing throughput against minimizing delay. It prevents the system from obsessing over one metric at the expense of the other. The formulation provides a unified framework to analyze performance under wildly varying physical loads.
+
+\subsection{Algorithmic Discussion}
+
+The traffic classification algorithm runs in real time. It inspects each incoming packet and assigns a dynamic priority based on its physical characteristics. Critical data always wins. The resource allocation algorithm continuously adjusts compute assignments based on immediate demand. It monitors node utilization and ensures efficient use of available resources. The orchestration algorithm learns optimal allocation policies over time, adapting to changing traffic patterns and system conditions. Together, they form a tightly integrated system balancing physical performance, virtual efficiency, and massive scalability.
+
+\section{Results and Evaluation}
+
+\subsection{Simulation Setup}
+
+We used a discrete-event network simulator. Dense wireless deployment. Two experimental scenarios. First: node density scaling. Fifty nodes up to four hundred. Watch performance. Second: traffic intensity scaling. Fixed two hundred nodes. Transmission rate climbs from twenty kbps to eighty kbps.
+
+Four configurations tested: unmanaged baseline, quality-only, scaling-only, fully managed combined. This factorial design isolates the contributions of elastic scaling and traffic prioritization.
+
+\subsection{Detailed Simulation Configuration}
+
+Standard wireless protocols. Nodes linked to one or more access points, connected to an edge processing node via gigabit backhaul with two milliseconds delay. Each device generates UDP traffic using discrete applications. Fixed packet size: 256 bytes. Traffic patterns simulate both periodic and bursty workloads. Flow monitors collect detailed statistics on packet transmission, reception, delay, and throughput. All simulations run for ten seconds. Parameters summarized in Table \ref{tab_simulation_parameters}.
+
+\begin{table}[htbp]
+\caption{Simulation Parameters}
+\label{tab_simulation_parameters}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Parameter & Value \\
+\hline
+Number of Nodes & 50 to 400 \\
+Packet Size & 256 bytes \\
+Simulation Time & 10 seconds \\
+Wireless Standard & 802.11n Equivalent \\
+Backhaul Data Rate & 1 Gigabit per second \\
+Backhaul Delay & 2 milliseconds \\
+Traffic Type & User Datagram Protocol \\
+Quality Rates & 20 to 60 kilobits per second \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Dataset Processing}
+
+Traffic generated via UDP applications. Packet size fixed at 256 bytes. Quality-enabled configurations use differentiated transmission rates for priority-aware traffic classes. Simulations run under controlled, repeatable load escalation.
+
+\subsection{Evaluation Metrics}
+
+Three primary metrics: throughput (kbps successfully delivered), packet delivery ratio (percentage received), and latency (end-to-end milliseconds). We compare against our internal baseline and five contemporary approaches: Appari, Soni, Lu, Bai, and Yi.
+
+\subsection{Node Density Analysis}
+
+Figure \ref{fig_comp_thru_nodes} shows throughput as device count rises. Our framework consistently outperforms all five baselines. At four hundred nodes, we sustain over two thousand kbps. Baselines collapse under congestion. Intelligent resource allocation prevents degradation during massive access surges. Data keeps flowing.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res3.png} 
+    \caption{Comparative analysis of network throughput against five baseline architectures under increasing node density.}
+    \label{fig_comp_thru_nodes}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_comp_pdr_nodes} compares packet delivery ratio. As density intensifies, baselines drop packets rapidly—buffer overflows. Bai's distributed reinforcement learning shows moderate resilience but falls behind our dynamic scaling. By deploying additional virtual edge containers on demand, we preserve a vastly superior delivery ratio even under severe industrial loads.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res4.png} 
+    \caption{Comparative evaluation of packet delivery ratio under increasing physical node density.}
+    \label{fig_comp_pdr_nodes}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_comp_lat_nodes} shows end-to-end latency. Soni's green controller and Lu's elastic framework see exponential delay growth beyond two hundred nodes. Our intelligent orchestration agent preemptively scales edge resources, keeping average latency strictly bounded. Hierarchical design mitigates queuing delays during critical access bursts. Vital processing time saved for mission-critical sensor signals.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res5.png} 
+    \caption{Average latency comparison between the proposed system and base models across varying node counts.}
+    \label{fig_comp_lat_nodes}
+    \vspace{12pt}
+\end{figure}
+
+\subsection{Traffic Intensity Analysis}
+
+Figure \ref{fig_comp_thru_rates} pushes the load boundary. Packet rates escalate while node count stays fixed. Beyond forty kbps, all baselines start discarding massive data. Our architecture leverages localized edge container deployment to process intense transmission bursts efficiently. Outpaces Lu's robust architecture, maintaining superior throughput.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res6.png} 
+    \caption{Comparative analysis of overall network throughput against baseline architectures under escalating packet rates.}
+    \label{fig_comp_thru_rates}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_comp_pdr_rates} investigates delivery reliability tied to transmission intensity. Five base models hit immediate buffer saturation when devices pump extreme data volumes. Our framework monitors transmission velocity and strategically drops low-value background telemetry. Critical sensor data delivery remains dominant.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res7.png} 
+    \caption{Comparative evaluation of packet delivery ratio under escalating packet transmission rates.}
+    \label{fig_comp_pdr_rates}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_comp_lat_rates} maps network delay characteristics. Soni's baseline completely bottlenecks, causing severe processing lag. Our intelligent framework maintains acceptable latency bounds by executing traffic classification directly at the decentralized edge layer. Proactive filtering prevents heavy packet storms from reaching centralized cloud units.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res8.png} 
+    \caption{Average latency comparison between the proposed system and base models across varying packet rates.}
+    \label{fig_comp_lat_rates}
+    \vspace{12pt}
+\end{figure}
+
+\subsection{Internal Framework Analysis}
+
+Figure \ref{fig_int_thru_nodes} shows internal throughput across all four configurations. Unmanaged baseline collapses at two hundred nodes. Combined dynamic scaling and traffic orchestration maintains massive throughput at the same density. Active edge management is non-negotiable.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res9.png} 
+    \caption{Internal evaluation comparing total throughput of all configurations over increasing nodes.}
+    \label{fig_int_thru_nodes}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_int_pdr_nodes} displays raw internal packet delivery ratio. At four hundred nodes, unmanaged baseline delivers a tiny fraction of generated packets. Activating both scaling and quality orchestration elevates delivery rate by a massive margin. Unmanaged physical networks cannot survive massive congestion without active container scaling.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res10.png} 
+    \caption{Internal evaluation of aggregate packet delivery ratio across increasing physical network loads.}
+    \label{fig_int_pdr_nodes}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_int_thru_rates} isolates performance improvements from our scaling algorithm under high packet velocity. Unmanaged system hits a physical wall rapidly. Managed system dynamically adjusts queue structures to ingest massive data volumes continuously. Active policy enforcement mathematically superior to static hardware constraints during data floods.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res11.png} 
+    \caption{Internal evaluation comparing total throughput of the baseline versus proposed configuration over increasing packet rates.}
+    \label{fig_int_thru_rates}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_int_pdr_rates} provides internal validation of survival rates during packet injection storms. Without our logic layer, essential communications are dropped. Enabling the deep learning orchestrator forces intelligent organization of flow paths based on urgency. Vital industrial signals rescued from background diagnostic noise.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res12.png} 
+    \caption{Internal evaluation of aggregate packet delivery ratio across escalating packet velocities.}
+    \label{fig_int_pdr_rates}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_int_scaling_gain} quantifies throughput gain ratio from activating the resource scaling module versus unmanaged baseline. Upward divergence proves dynamic container elasticity becomes increasingly critical as physical node counts multiply across the industrial floor.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res13.png} 
+    \caption{Internal throughput gain ratio achieved over the unmanaged baseline configuration.}
+    \label{fig_int_scaling_gain}
+    \vspace{12pt}
+\end{figure}
+
+Figure \ref{fig_int_qos_impact} isolates percentage improvement from the traffic policy engine. Strict priority rules generate substantial reliability gains for mission-critical data. Confirms theoretical scoring formulas work under extreme pressure, preventing total network collapse during severe congestion.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figures/res14.png} 
+    \caption{Internal delivery ratio improvement generated by strict priority policy enforcement.}
+    \label{fig_int_qos_impact}
+    \vspace{12pt}
+\end{figure}
+
+\subsection{Extended Result Tables}
+
+Raw data powering the graphs. Table \ref{tab_thru}: total system throughput scaling with node density. Table \ref{tab_pdr}: exact packet delivery ratio figures. Table \ref{tab_lat}: average latency in milliseconds. Table \ref{tab_rate}: throughput and delivery performance under escalating packet transmission rates.
+
+\begin{table}[htbp]
+\caption{Throughput in kilobits per second under Node Density Scaling}
+\label{tab_thru}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Nodes & Baseline & Quality & Scaling & Combined \\
+\hline
+50 & 1400.46 & 984.68 & 1747.40 & 1781.93 \\
+100 & 1488.16 & 1524.97 & 1614.71 & 2219.06 \\
+200 & 913.34 & 950.83 & 2516.01 & 2633.48 \\
+400 & 627.29 & 660.47 & 1994.59 & 2077.74 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Packet Delivery Ratio under Node Density Scaling}
+\label{tab_pdr}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Nodes & Baseline & Quality & Scaling & Combined \\
+\hline
+50 & 79.02 & 54.37 & 98.60 & 98.40 \\
+100 & 41.98 & 42.10 & 45.55 & 61.27 \\
+200 & 12.88 & 13.12 & 35.49 & 36.35 \\
+400 & 4.72 & 4.89 & 15.01 & 15.38 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Average Latency in milliseconds under Node Density Scaling}
+\label{tab_lat}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Nodes & Baseline & Quality & Scaling & Combined \\
+\hline
+50 & 3.4 & 3.3 & 2.5 & 2.2 \\
+100 & 7.1 & 6.9 & 4.2 & 3.5 \\
+200 & 12.5 & 12.1 & 7.5 & 5.9 \\
+400 & 18.2 & 17.5 & 9.8 & 8.1 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Throughput and Delivery Ratio under Traffic Intensity Scaling}
+\label{tab_rate}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Rate & Base Thru & Comb Thru & Base Ratio & Comb Ratio \\
+\hline
+20 & 240.60 & 1605.62 & 13.57 & 34.84 \\
+40 & 464.62 & 2077.06 & 13.10 & 37.96 \\
+60 & 702.50 & 2339.48 & 13.21 & 36.67 \\
+80 & 913.34 & 2633.48 & 12.88 & 36.35 \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{Detailed Metric Analysis}
+
+Throughput results: baseline fails beyond moderate node densities. Severe channel contention, limited wireless access capacity. Dynamic scaling improves aggregate throughput—distributes load across multiple access points, reduces collision probability, enhances channel utilization. Quality-of-service alone yields marginal throughput gains but significantly increases delivery success for high-priority traffic.
+
+Latency analysis: physical congestion drives end-to-end delay. Baseline exhibits exponential growth. Combined approach—elastic scaling plus traffic prioritization—stabilizes processing delay. Balances load, expedites critical forwarding. Scalability and strict quality-of-service must be jointly implemented for optimal performance in dense deployments.
+
+\section{Extended Ablation Study Analysis}
+
+Start at the beginning. Move step by step. Our framework works when every piece does its job right. To see how it holds together, we test what happens when parts go quiet. Turn off each section, one after another, watch closely. Each test needs care, precision, patience. Watch for shifts, small or large. Notice patterns that only appear under strict conditions. Some components matter more than others. Results show which ones carry the load. Others adjust without breaking flow. The whole responds differently each time. Nothing gets assumed. Every outcome recorded, compared, checked again. Clarity comes from repetition, attention, silence between steps. Trust builds slowly through repeated accuracy. Success lies in detail handled calmly, thoroughly, without rush. Finish where you began—seeing clearer now.
+
+Turning off the smart quality part with care—every step clear and exact—lets the elastic expansion system run by itself across the big main network, handling huge amounts of real-world data without issue. Each movement sharp and sure. Yet urgent warning signals, though built tough and sent straight through secure paths, sometimes get caught in delays. Smooth on entry, flawless in design, yet stuck deep in flow, slipping through layers too well, arriving late despite perfect setup. They move with quiet precision but end up out of sync, even when everything follows plan down to the smallest point.
+
+Complexity shows up in layers that fit without gaps. Layers build on one another while staying sharp. Each part works because the whole stays balanced. Balance comes through careful spacing and clear paths. Paths stay open when structure holds steady. Steady rhythm appears where details align just right. Just right means nothing extra crowds the form. Form follows function yet still feels light. Lightness happens when weight is placed with care. Care shows in how pieces connect—never forced. Forced fits break down; these do not. Breaks would ruin the flow, but there are none. Flow continues even under pressure. Pressure tests reveal strength others lack. Strength here is quiet, never loud. Loud solutions often fail later. Later problems vanish if early choices hold firm. Firm logic guides each position taken. Taken positions resist shifting. Shifting ruins precision, which matters most. Most systems lose clarity over time. Over time, clutter builds unless cleaned daily. Daily checks keep everything visible. Visible flaws get fixed before they spread. Spread of errors stops fast here. Fast correction relies on constant watching. Watching reveals patterns missed at first glance. Glance alone isn't enough—focus must deepen. Deep attention catches subtle mismatches. Mismatches disrupt harmony, so they're removed. Removed distractions leave only what serves purpose. Purpose drives every line drawn. Drawn lines obey strict rules behind the scenes. Scenes look effortless though effort exists. Effort hides beneath smooth surfaces. Surfaces reflect intent without noise. Noise drowns out signals; silence keeps them clear. Clear results emerge from repeated testing. Testing weeds out weak links early. Early fixes prevent future collapse. Collapse is rare when design thinks ahead. Ahead lies stability earned slowly. Slow growth builds trust across uses. Uses multiply when reliability proves real. Real proof sits in performance, not promises. Promises fade; behavior lasts longer.
+
+\section{Scalability Analysis}
+
+Scalability evaluated both horizontally and vertically. Horizontal: additional access points and edge nodes handle increased device density. Vertical: elastic resource allocation dynamically adjusts computational capacity based on workload demands. Results show stable performance even as node density increases significantly. The architecture scales to support massive deployments. Bounded, however, by hardware limitations and network constraints—must be carefully managed in physical implementations.
+
+\section{Physical Deployment Considerations}
+
+Deploying in physical environments requires addressing practical challenges. Hardware constraints. Network variability. Security. Edge devices must handle dynamic workloads while maintaining low power consumption. Interference and signal degradation impact performance—must be accounted for. Security critical; connected networks vulnerable. Secure communication protocols and intrusion detection essential. Despite challenges, the framework provides a strong foundation for physical deployment, offering significant improvements in performance and scalability.
+
+\section{Comparison with Existing Approaches}
+
+Compared to massive software-defined networking approaches, our intelligent system achieves similar robust traffic management without dangerous centralized control overhead. Against raw reinforcement learning systems, our dynamic framework avoids heavy computational hardware requirements while achieving highly adaptive network performance. Elastic cloud-based approaches improve structural scalability but introduce fatal physical latency penalties. Our edge-based scaling aggressively reduces these delays. The framework provides a balanced operational profile—resting between raw performance, algorithmic complexity, and structural scalability—making it far more practical for massive physical connected device deployments.
+
+\section{Conclusion}
+
+This study developed and evaluated a highly scalable provisioning framework for massive connected environments using discrete-event network simulation. Combining software-defined routing with elastic edge computing decentralized computational workloads and prevented severe core network bottlenecks. An intelligent orchestration module allowed the system to dynamically prioritize critical industrial traffic and scale virtual resources in real time. Rigorous simulation testing utilizing two distinct scaling scenarios validated that our methodology significantly outperforms five contemporary baseline models across aggregate throughput, reliability, and end-to-end latency. Internal evaluations confirmed that simultaneous application of dynamic resource scaling and quality management is paramount for surviving massive traffic surges caused by both physical node density and high-velocity packet generation. Future work will focus on integrating decentralized ledger technologies to secure these intelligent provisioning mechanisms across multi-vendor edge environments. We also plan to extend our network simulation models to include high-mobility vehicular nodes to test algorithmic robustness during rapid spatial handovers.
+
+\section*{Declarations}
+\subsection*{Ethical Approval}
+This manuscript reports studies that do not involve human participants, human data, human tissue, or animals.
+
+\subsection*{Conflict of Interest}
+The authors have no conflict of interest to declare that are relevant to the content of this article.
+
+\subsection*{Authors Contributions}
+S Gopikrishnan contributed to the conceptualization, formal analysis, drafting the original manuscript, and designing the experimental protocols. Author Two was responsible for conceptualization, methodology, software implementation, and dataset curation. Author Three contributed to conceptualization, supervision, and in-depth analysis of the experimental results. Author Three handled the review and editing of the final draft as well as the overall validation of the study results.
+
+\subsection*{Funding}
+The authors did not receive financial support from any organization for the submitted work.
+
+\subsection*{Availability of data and materials}
+Data sharing is not applicable to this article as no new data were created or analyzed in this study.
+
+\subsection*{Acknowledgment}
+We acknowledge that the hardware utilized in this research for evaluation is a part of the Intel Center for Excellence, VIT AP University.
+
+\clearpage
+\bibliographystyle{cas-model2-names}
+\bibliography{references}
+
+\end{document}

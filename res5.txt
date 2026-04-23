@@ -1,0 +1,5 @@
+The packet delivery ratio analysis under increasing node density highlights the reliability challenges faced by dense IoT networks. The baseline system exhibits a steady decline in PDR as node count increases, primarily due to buffer overflows and packet collisions. This indicates that the system is unable to handle the increased traffic load, leading to significant data loss.
+
+In comparison, the proposed system maintains a higher packet delivery ratio across all node densities. This improvement is achieved through effective congestion management and traffic prioritization. By ensuring that critical packets are given higher priority and allocating sufficient resources dynamically, the system reduces packet loss significantly.
+
+The results demonstrate that reliability can be preserved even in high-density scenarios with proper resource management. This is particularly important for mission-critical applications where data loss can have serious consequences.

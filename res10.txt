@@ -1,0 +1,5 @@
+The internal packet delivery ratio under increasing node density provides a detailed view of system reliability. The baseline configuration shows a sharp decline in PDR as the number of nodes increases, indicating high packet loss.
+
+The proposed system maintains a higher PDR due to efficient congestion management and resource allocation. By dynamically adjusting to network conditions, the system ensures reliable data transmission.
+
+This analysis highlights the robustness of the proposed framework in handling dense network environments. It confirms that proper resource management can significantly improve reliability.

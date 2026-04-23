@@ -1,0 +1,5 @@
+The throughput gain analysis illustrates the performance improvement achieved through scaling mechanisms. The gain increases as node density grows, indicating that scaling becomes more effective under higher load conditions.
+
+This improvement is due to the system’s ability to distribute workload across multiple resources, preventing congestion and improving efficiency. The results highlight the importance of scalability in maintaining performance.
+
+Overall, the analysis confirms that elastic scaling significantly enhances system capacity. It demonstrates the effectiveness of the proposed approach in handling large-scale deployments.

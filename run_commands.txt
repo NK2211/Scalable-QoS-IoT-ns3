@@ -1,0 +1,63 @@
+# ===============================
+# NS-3 EXECUTION COMMANDS
+# Project: QoS IoT Scaling
+# ===============================
+
+# ---------- BASELINE (Scaling=0, QoS=0) ----------
+
+# Nodes = 50
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=20kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=40kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=60kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=80kbps --enableScaling=0 --enableQos=0"
+
+# Nodes = 100
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --baseRate=20kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --baseRate=40kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --baseRate=60kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --baseRate=80kbps --enableScaling=0 --enableQos=0"
+
+# Nodes = 200
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --baseRate=20kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --baseRate=40kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --baseRate=60kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --baseRate=80kbps --enableScaling=0 --enableQos=0"
+
+# Nodes = 400
+./ns3 run "scratch/qos-iot-scaling --nNodes=400 --baseRate=20kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=400 --baseRate=40kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=400 --baseRate=60kbps --enableScaling=0 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=400 --baseRate=80kbps --enableScaling=0 --enableQos=0"
+
+
+# ---------- QoS ONLY (Scaling=0, QoS=1) ----------
+
+# Nodes = 50
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --enableScaling=0 --enableQos=1"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --enableScaling=0 --enableQos=1 --hiRate=30kbps --loRate=70kbps"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --enableScaling=0 --enableQos=1 --hiRate=40kbps --loRate=80kbps"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --enableScaling=0 --enableQos=1 --hiRate=50kbps --loRate=90kbps"
+
+# Nodes = 100
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --enableScaling=0 --enableQos=1"
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --enableScaling=0 --enableQos=1 --hiRate=30kbps --loRate=70kbps"
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --enableScaling=0 --enableQos=1 --hiRate=40kbps --loRate=80kbps"
+./ns3 run "scratch/qos-iot-scaling --nNodes=100 --enableScaling=0 --enableQos=1 --hiRate=50kbps --loRate=90kbps"
+
+
+# ---------- SCALING ONLY (Scaling=1, QoS=0) ----------
+
+# Nodes = 50
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=20kbps --enableScaling=1 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=40kbps --enableScaling=1 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=60kbps --enableScaling=1 --enableQos=0"
+./ns3 run "scratch/qos-iot-scaling --nNodes=50 --baseRate=80kbps --enableScaling=1 --enableQos=0"
+
+
+# ---------- SCALING + QoS (Scaling=1, QoS=1) ----------
+
+# Nodes = 200 (MAIN EXPERIMENT)
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --enableScaling=1 --enableQos=1"
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --enableScaling=1 --enableQos=1 --hiRate=30kbps --loRate=70kbps"
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --enableScaling=1 --enableQos=1 --hiRate=40kbps --loRate=80kbps"
+./ns3 run "scratch/qos-iot-scaling --nNodes=200 --enableScaling=1 --enableQos=1 --hiRate=50kbps --loRate=90kbps"

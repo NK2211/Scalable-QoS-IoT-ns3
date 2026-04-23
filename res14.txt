@@ -1,0 +1,5 @@
+The QoS impact analysis evaluates the improvement in packet delivery ratio achieved through prioritization mechanisms. The results show a significant increase in PDR when QoS is enabled, especially under high congestion.
+
+This improvement is achieved by ensuring that critical traffic is given priority over non-essential data. As a result, important packets are delivered successfully even during heavy load conditions.
+
+The findings confirm that QoS mechanisms play a vital role in maintaining reliability. The proposed approach effectively enhances system performance by prioritizing critical data flows.

@@ -1,0 +1,114 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="mlvYfApxWQr5PY18M9am">
+    <mxGraphModel dx="780" dy="1863" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-1" value="Incoming Admitted Flow" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="358" y="30" width="233" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-2" value="Calculate CPU and Memory Demand" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="345" y="134" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-3" value="Evaluate Target Edge Server Capacity" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="345" y="262" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-4" value="Is Utilization Ratio Optimal?" style="rhombus;strokeWidth=2;whiteSpace=wrap;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="336" y="390" width="278" height="278" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-5" value="Deploy Local Software Container" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="190" y="846" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-6" value="Calculate Resource Deficit" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="505" y="742" width="249" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-7" value="Allocate Dedicated Edge Resources" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="190" y="974" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-8" value="Initiate Cloud Offload Sequence" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="500" y="846" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-9" value="Process Priority Tasks Locally" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1102" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-10" value="Redirect Flow to Cloud Server Pool" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="500" y="974" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-11" value="Process Background Tasks in Cloud" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1102" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-12" value="Update Provisioning Cost and Energy Metrics" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="345" y="1230" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-13" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-1" target="wBSZJkdcxlaJdvPPjnmW-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-14" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-2" target="wBSZJkdcxlaJdvPPjnmW-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-15" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-3" target="wBSZJkdcxlaJdvPPjnmW-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-16" value="Yes" style="curved=1;startArrow=none;endArrow=block;exitX=0.06;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-4" target="wBSZJkdcxlaJdvPPjnmW-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="705" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-17" value="No" style="curved=1;startArrow=none;endArrow=block;exitX=0.94;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-4" target="wBSZJkdcxlaJdvPPjnmW-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="705" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-18" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-5" target="wBSZJkdcxlaJdvPPjnmW-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-19" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-6" target="wBSZJkdcxlaJdvPPjnmW-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-20" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-7" target="wBSZJkdcxlaJdvPPjnmW-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-21" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-8" target="wBSZJkdcxlaJdvPPjnmW-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-22" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-10" target="wBSZJkdcxlaJdvPPjnmW-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-23" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.14;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-9" target="wBSZJkdcxlaJdvPPjnmW-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="1205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wBSZJkdcxlaJdvPPjnmW-24" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.86;entryY=0;rounded=0;fontStyle=1;fontSize=15;" edge="1" parent="1" source="wBSZJkdcxlaJdvPPjnmW-11" target="wBSZJkdcxlaJdvPPjnmW-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="1205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

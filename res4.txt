@@ -1,0 +1,5 @@
+The latency analysis with increasing node density reveals the impact of congestion on network delay. In the baseline configuration, latency increases sharply as the number of nodes grows. This is primarily due to increased queuing delays and retransmissions caused by packet collisions. Beyond a certain threshold, the delay becomes unacceptable for real-time applications, indicating poor scalability of the baseline system.
+
+The proposed framework demonstrates significantly lower latency across all node levels. By processing critical traffic at the edge and distributing workloads efficiently, the system minimizes queuing delays. Additionally, prioritization ensures that time-sensitive packets are transmitted with minimal waiting time, further reducing overall latency.
+
+These results confirm that decentralized processing and intelligent traffic management are effective in controlling delay under dense network conditions. The ability to maintain low latency is crucial for applications such as industrial automation and healthcare monitoring.
